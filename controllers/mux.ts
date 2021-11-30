@@ -24,7 +24,7 @@ const submitDirectUpload = async (ctx:Context) => {
       password: config.secret_key
     },
     headers: { 'Content-Type': 'application/json' },
-    data: { "cors_origin": ctx.request.header.origin, "new_asset_settings": { "playback_policy": ["public"] } }
+    data: { "cors_origin": ctx.request.header.origin, "new_asset_settings": { "playback_policy": ["signed"] } }
   });
 
   const body = result.data.data;
